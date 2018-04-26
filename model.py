@@ -49,9 +49,9 @@ class BeU(object):
         self.light = self.light_gt
 
         # normal control test
-        # self.bg = self.decoderBM(self.z[4], self.e, 'dec_B', reuse = False) # 100, 64, 64, 3
-        # self.mask = self.decoderM(self.z[5], self.e, 'dec_M', reuse = False) #  100, 64, 64, 3
-        # self.light = self.decoderL(self.z[3], 'dec_L', reuse = False) # 100, 10, 3
+        self.bg = self.decoderBM(self.z[4], self.e, 'dec_B', reuse = False) # 100, 64, 64, 3
+        self.mask = self.decoderM(self.z[5], self.e, 'dec_M', reuse = False) #  100, 64, 64, 3
+        self.light = self.decoderL(self.z[3], 'dec_L', reuse = False) # 100, 10, 3
         self.normal, self.normalnm = self.decoderN(self.z[2], 'dec_N', reuse = False) # 100, 64, 64, 3 / 100, 64, 64, 1
         # self.albedo = self.decoderA(self.z[1], 'dec_A', reuse = False) # 100, 64, 64, 3
 
